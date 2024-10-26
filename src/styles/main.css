@@ -1,0 +1,379 @@
+/* __________________ Google Font __________________ */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+/* __________________ BASE __________________ */
+*, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--family-openSans);
+  font-size: 16px;
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  font-family: var(--family-primary);
+  font-weight: var(--font-medium);
+}
+
+p {
+  font-size: 12px;
+}
+
+small {
+  font-size: 8px;
+}
+
+/* __________________ Class CSS __________________ */
+.container {
+  max-width: 1400px;
+  width: 100%;
+  padding: 0px 15px;
+  margin: 0 auto;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  padding: 5px;
+}
+
+button {
+  color: var(--body-color);
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid var(--body-color);
+}
+button:hover {
+  color: var(--primary-color);
+  background-color: var(--body-color);
+  border: 1px solid var(--primary-color);
+  transition: 0.5s;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+  background-color: rgba(51, 51, 51, 0.3568627451);
+}
+
+/* __________________ Variable Root __________________ */
+:root {
+  /* ---------- Colors ---------- */
+  --primary-color: #e30b13;
+  --secondary-color: #262626;
+  --secondary-color-light: #464646;
+  --text-color: #212121;
+  --text-color-light: #666666;
+  --body-color: #FFFFFF;
+  /* ---------- Font Weight ---------- */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+  /* ------------- Font Family --------------- */
+  --family-primary: "Lexend", sans-serif;
+  --family-secondary: "Barlow", sans-serif;
+  --family-openSans: "Open Sans", sans-serif;
+  /* ---------- Margin/padding ---------- */
+  --mp-1: 5px;
+  --mp-2: 10px;
+  --mp-3: 15px;
+  --mp-4: 20px;
+  --mp-5: 30px;
+  --mp-6: 40px;
+  /* ---------- z-index ---------- */
+  --z-1: 1;
+  --z-2: 2;
+  --z-3: 3;
+  --z-fixed: 100;
+}
+
+header {
+  width: 100%;
+  height: 73px;
+  background-color: rgba(255, 255, 255, 0.8392156863);
+  box-shadow: 0 3px 15px var(--secondary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 10px 0;
+}
+header nav .nav_logo img {
+  width: 140px;
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+header nav ul li {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  text-transform: uppercase;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 13px;
+}
+header nav ul li:hover {
+  color: var(--primary-color);
+  transition: 0.5s;
+}
+header nav ul li svg {
+  width: 30px;
+  height: 20px;
+  color: inherit;
+}
+header nav ul .call {
+  position: relative;
+  cursor: pointer;
+}
+header nav ul .call:hover ul {
+  top: 110%;
+  opacity: 1;
+  transition: 0.5s;
+}
+header nav ul .call ul {
+  position: absolute;
+  top: 70%;
+  background-color: var(--body-color);
+  left: 0;
+  opacity: 0;
+  transition: 0.5s;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+  padding: 5px;
+  flex-direction: column;
+  gap: 1px;
+}
+header nav ul .call button {
+  padding: 5px 10px;
+}
+
+.hero {
+  background-color: #232323;
+  padding-top: 80px;
+}
+.hero .hero_data {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero .hero_data .hero_menu {
+  width: 500px;
+  justify-content: space-between;
+  background-color: var(--body-color);
+  padding: 15px;
+  border-radius: 10px 10px 0 0;
+}
+.hero .hero_data .hero_menu ul div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.hero .hero_data .hero_menu ul div li {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  text-transform: uppercase;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 13px;
+  justify-content: center;
+  font-size: 12px;
+  border-left: 1px solid var(--primary-color);
+  padding: 10px 5px;
+}
+.hero .hero_data .hero_menu ul div li:hover {
+  color: var(--primary-color);
+  transition: 0.5s;
+}
+.hero .hero_data .hero_menu ul div li svg {
+  width: 30px;
+  height: 20px;
+  color: inherit;
+}
+.hero .hero_data .hero_menu ul div li:hover {
+  background-color: var(--primary-color);
+  color: var(--body-color);
+  transition: 0.7s;
+}
+.hero .hero_data .hero_menu ul div li:first-child {
+  border: none;
+}
+.hero .hero_data .hero_menu ul div li svg {
+  width: 23px;
+  height: 15px;
+}
+.hero .hero_data .travel_route {
+  background-color: var(--body-color);
+  width: 900px;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+.hero .hero_data .travel_route .air_btn, .hero .hero_data .travel_route ul, .hero .hero_data .travel_route .trend_search {
+  display: flex;
+}
+.hero .hero_data .travel_route .air_btn {
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+.hero .hero_data .travel_route .air_btn ul {
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.hero .hero_data .travel_route .air_btn ul li {
+  padding: 5px 10px;
+  border-left: 1px solid var(--primary-color);
+}
+.hero .hero_data .travel_route .air_btn ul li:first-child {
+  border: none;
+}
+.hero .hero_data .travel_route .air_btn ul li label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 5px 0px;
+}
+.hero .hero_data .travel_route .air_btn ul li label input {
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+}
+.hero .hero_data .travel_route .hero_place {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px;
+  overflow: hidden;
+}
+.hero .hero_data .travel_route .hero_place ul {
+  position: relative;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+.hero .hero_data .travel_route .hero_place ul li {
+  cursor: pointer;
+  border-left: 1px solid var(--primary-color);
+  padding: 5px 20px;
+}
+.hero .hero_data .travel_route .hero_place ul li:first-child {
+  border: none;
+}
+.hero .hero_data .travel_route .hero_place ul li p {
+  opacity: 0.9;
+}
+.hero .hero_data .travel_route .hero_place ul li small {
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.hero .hero_data .travel_route .hero_place ul .change_btn {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translate(46%, -50%);
+  cursor: pointer;
+}
+.hero .hero_data .travel_route .hero_place ul .change_btn svg {
+  width: 25px;
+  height: 25px;
+  padding: 4px;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  background-color: var(--body-color);
+}
+.hero .hero_data .travel_route .hero_place ul .change_btn svg:hover {
+  background-color: var(--primary-color);
+  color: var(--body-color);
+  transition: 0.5s;
+}
+.hero .hero_data .travel_route .trend_search ul li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+}
+.hero .hero_data .travel_route .trend_search ul li h5 {
+  padding: 20px 0px;
+}
+.hero .hero_data .travel_route .search_btn {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+.hero .hero_data .travel_route .search_btn button {
+  padding: 12px 23px;
+}
+
+@media screen and (max-width: 992px) {
+  .hero .hero_data .hero_menu {
+    width: 75%;
+  }
+  .hero .hero_data .travel_route {
+    width: 90%;
+  }
+  .hero .hero_data .travel_route .hero_place {
+    grid-template-columns: repeat(1, auto);
+  }
+  .hero .hero_data .travel_route .hero_place ul .change_btn {
+    transform: translate(48.5%, -50%);
+  }
+}/*# sourceMappingURL=main.css.map */

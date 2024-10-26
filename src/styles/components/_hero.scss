@@ -1,0 +1,193 @@
+.hero{
+    background-color: #232323;
+    padding-top: 80px;
+    .hero_data{
+        height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .hero_menu{
+            width: 500px;
+            justify-content: space-between;
+            background-color: var(--body-color);
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            ul{
+                div{
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    border: 1px solid var(--primary-color);
+                    border-radius: 8px;
+                    overflow: hidden;
+                    li{
+                        @include icon;
+                        justify-content: center;
+                        font-size: 12px;
+                        border-left: 1px solid var(--primary-color);
+                        padding: 10px 5px;
+                        &:hover{
+                            background-color: var(--primary-color);
+                            color: var(--body-color);
+                            transition: .7s;
+                        }
+                        &:first-child{
+                            border: none
+                        }
+                        svg{
+                            width: 23px;
+                            height: 15px;
+                        }
+                    }
+                
+                }
+            }
+        }
+
+        // ---------- travel root
+        .travel_route{
+            background-color: var(--body-color);
+            width: 900px;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            .air_btn, ul, .trend_search{
+                display: flex;
+            }
+            .air_btn{
+                justify-content: center;
+                margin-bottom: 20px;
+                gap: 20px;
+                ul{
+                    border: 1px solid var(--primary-color);
+                    border-radius: 8px;
+                    @include flexShort(20px);
+                    li{
+                        padding: 5px 10px;
+                        border-left: 1px solid var(--primary-color);
+                        &:first-child{
+                            border: none;
+                        }
+                        label{
+                            @include flexShort(3px);
+                            cursor: pointer;
+                            font-size: 12px;
+                            padding: 5px 0px;
+                            input{
+                                border: 1px solid var(--primary-color);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ---------- hero place 
+            .hero_place{
+                    display: grid;
+                    grid-template-columns: repeat(3, auto);
+                    gap: 10px;
+                    overflow: hidden;
+                ul{
+                    position: relative;
+                    border: 1px solid var(--primary-color);
+                    border-radius: 8px;
+                    display: grid;
+                    grid-template-columns: repeat(2, auto);
+                    li{
+                        cursor: pointer;
+                        border-left: 1px solid var(--primary-color);
+                        padding: 5px 20px;
+                        &:first-child{
+                            border: none;
+                        }
+                        p{
+                            opacity: .9;
+                        }
+                        small{
+                            text-transform: uppercase;
+                            opacity: .7;
+                        }
+                    }
+                    .change_btn{
+                        position: absolute;
+                        width: 100%;
+                        top: 50%;
+                        left: 0;
+                        transform: translate(46%, -50%);
+                        cursor: pointer;
+                        svg{
+                            width: 25px;
+                            height: 25px;
+                            padding: 4px;
+                            border: 1px solid var(--primary-color);
+                            border-radius: 50%;
+                            background-color: var(--body-color);
+                            &:hover{
+                                background-color: var(--primary-color);
+                                color: var(--body-color);
+                                transition: .5s;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // --------------- trend_search
+            .trend_search{
+                ul{
+                    li{
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        padding: 5px 10px;
+                        h5{
+                            padding: 20px 0px;
+                        }
+                    }
+                }
+            }
+
+            // ---------------- Search btn 
+            .search_btn{
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                bottom: 0;
+                right: 50%;
+                transform: translate(50%, 50%);
+                button{
+                    padding: 12px 23px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .hero {
+        .hero_data {
+            .hero_menu {
+                width: 75%;
+            }
+        }
+    }
+    .hero{
+        .hero_data{
+            // margin-top: 40px;
+            .travel_route {
+                width: 90%;
+                // ---------- hero place 
+                .hero_place {
+                    grid-template-columns: repeat(1, auto);
+                    ul{
+                        .change_btn{
+                            transform: translate(48.5%, -50%);
+                        }
+                    }
+            }
+        } 
+    }
+
+    } 
+}
