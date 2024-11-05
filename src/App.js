@@ -1,15 +1,11 @@
 import React from 'react'
 import "./styles/main.css"
-import Header from './Components/Header/Header'
-import Hero from './Components/Hero/Hero'
-import FlashDeals from './Components/FlashDeals/FlashDeals'
+import Home from './Page/Home/Home'
 
 const App = () => {
   return (
     <div>
-      <Header/>
-      <Hero/>
-      <FlashDeals/>
+      <Home/>
     </div>
   )
 }

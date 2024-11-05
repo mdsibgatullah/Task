@@ -1,0 +1,54 @@
+.popular_hotel{
+    .popular_content{
+        .item{
+            .img{
+                height: 240px;
+                img{
+                    // width: 100%;
+                    height: 240px;
+                    transition: .5s;
+                }
+                
+            }
+
+            // populer_hotel -------
+            .populer_hotel{
+                padding: 15px 10px;
+                h3{
+                    padding: 0;
+                }
+                p{
+                    padding: 10px 0;
+                }
+                h4{
+                    color: green;
+                    padding-bottom: 10px;
+                }
+
+                .review{
+                    @include flex(center, start, 15px);
+                    ul{
+                        @include flexShort(2px);
+                        color: #ffc700;
+                        background-color: #f9f7ff;
+                        padding: 5px 10px;
+                        border-radius: 10px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .popular_hotel{
+        .popular_content{
+            .item{
+                .img{
+                    height: 200px;
+                }
+            }
+        }
+    }
+}

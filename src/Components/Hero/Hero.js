@@ -1,5 +1,5 @@
 import React from 'react'
-import hero1 from '../../assets/image/hero1.jpg'
+import hero1 from '../../assets/image/hero1.png'
 import { FaArrowRightLong } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 import { GoArrowSwitch } from "react-icons/go";
@@ -12,12 +12,22 @@ import { IoBusOutline } from "react-icons/io5";
 const Hero = () => {
   return (
     <section className='hero' 
-    style={{
-        backgroundImage: `url(${hero1})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-    }}>
-        <div className="container">
+        style={{
+            backgroundImage: `url(${hero1})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+        }}
+        >
+        <div className="hero_image"
+            style={{
+                backgroundImage: `url(${hero1})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                height:'200px',
+            }}
+            >
+        </div>
+        <div className="">
             <div className="hero_data">
 
                 {/* -------- hero menu  */}
@@ -28,6 +38,7 @@ const Hero = () => {
                             <li><PiAirplaneTilt /><span>air</span></li>
                             <li><PiTrain /><span>train</span></li>
                             <li><LiaHotelSolid /><span>hotel</span></li>
+                            <li><PiTrain /><span>train</span></li>
                         </div>
                     </ul>
                 </div>
@@ -94,8 +105,9 @@ const Hero = () => {
                         
                         {/* -------- Trending Searches */}
                         <div className='trend_search'>
+                            <h4>Trending Searches: </h4>
                             <ul>
-                                <li><h5>Trending Searches:  </h5></li>
+                                <li><p>Dhaka</p> <FaArrowRightLong /> <p>Bangkok</p></li>
                                 <li><p>Dhaka</p> <FaArrowRightLong /> <p>Bangkok</p></li>
                                 <li><p>Dhaka</p> <FaArrowRightLong /> <p>Bangkok</p></li>
                                 <li><p>Dhaka</p> <FaArrowRightLong /> <p>Bangkok</p></li>

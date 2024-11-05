@@ -1,0 +1,17 @@
+.frequently_content{
+    .item{
+        height: 250px;
+        .img{
+            img{
+                height: 250px;
+            }
+            h2{
+                position: absolute;
+                width: 100%;
+                top: 40px;
+                text-align: center;
+                color: var(--body-color);
+            }
+        }
+    }
+}

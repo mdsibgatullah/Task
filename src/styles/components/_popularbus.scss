@@ -1,0 +1,36 @@
+.popular_bus{
+    margin: 0 auto;
+    ul{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        justify-self: center;
+        li{
+            svg{
+                color: red;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .popular_bus{
+        ul{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .popular_bus{
+        ul{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .popular_bus{
+        ul{
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

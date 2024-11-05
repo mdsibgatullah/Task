@@ -1,6 +1,9 @@
 .hero{
     background-color: #232323;
     padding-top: 80px;
+    .hero_image{
+        display: none;
+    }
     .hero_data{
         height: calc(100vh - 80px);
         display: flex;
@@ -16,15 +19,15 @@
             ul{
                 div{
                     display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    border: 1px solid var(--primary-color);
+                    grid-template-columns: repeat(5, 1fr);
+                    border: 1px solid var(--border-color);
                     border-radius: 8px;
                     overflow: hidden;
                     li{
                         @include icon;
                         justify-content: center;
                         font-size: 12px;
-                        border-left: 1px solid var(--primary-color);
+                        border-left: 1px solid var(--border-color);
                         padding: 10px 5px;
                         &:hover{
                             background-color: var(--primary-color);
@@ -59,12 +62,12 @@
                 margin-bottom: 20px;
                 gap: 20px;
                 ul{
-                    border: 1px solid var(--primary-color);
+                    border: 1px solid var(--border-color);
                     border-radius: 8px;
                     @include flexShort(20px);
                     li{
                         padding: 5px 10px;
-                        border-left: 1px solid var(--primary-color);
+                        border-left: 1px solid var(--border-color);
                         &:first-child{
                             border: none;
                         }
@@ -74,7 +77,7 @@
                             font-size: 12px;
                             padding: 5px 0px;
                             input{
-                                border: 1px solid var(--primary-color);
+                                border: 1px solid var(--border-color);
                                 cursor: pointer;
                             }
                         }
@@ -90,13 +93,13 @@
                     overflow: hidden;
                 ul{
                     position: relative;
-                    border: 1px solid var(--primary-color);
+                    border: 1px solid var(--border-color);
                     border-radius: 8px;
                     display: grid;
                     grid-template-columns: repeat(2, auto);
                     li{
                         cursor: pointer;
-                        border-left: 1px solid var(--primary-color);
+                        border-left: 1px solid var(--border-color);
                         padding: 5px 20px;
                         &:first-child{
                             border: none;
@@ -120,7 +123,7 @@
                             width: 25px;
                             height: 25px;
                             padding: 4px;
-                            border: 1px solid var(--primary-color);
+                            border: 1px solid var(--border-color);
                             border-radius: 50%;
                             background-color: var(--body-color);
                             &:hover{
@@ -135,14 +138,20 @@
 
             // --------------- trend_search
             .trend_search{
+                @include flexShort(5px);
+                margin: 30px 0 20px;
                 ul{
+                    display: flex;
+                    gap: 5px;
+                    flex-wrap: wrap;
                     li{
-                        display: flex;
-                        align-items: center;
-                        gap: 5px;
+                        @include flexShort(5px);
                         padding: 5px 10px;
-                        h5{
-                            padding: 20px 0px;
+                        background-color: #eaeaea;
+                        border-radius: 4px;
+                        svg{
+                            color: var(--primary-color);
+                            opacity: .6;
                         }
                     }
                 }
@@ -165,18 +174,49 @@
 }
 
 @media screen and (max-width: 992px) {
-    .hero {
-        .hero_data {
-            .hero_menu {
-                width: 75%;
-            }
-        }
-    }
     .hero{
+        background-image: none !important;
+        padding: 0;
+        background-color: var(--body-color);
+        .hero_image{
+            display: block;
+        }
         .hero_data{
-            // margin-top: 40px;
+            height: 100%;
+            .hero_menu{
+                width: 100%;
+                justify-content: space-between;
+                background-color: var(--body-color);
+                padding: 0px;
+                border-radius: 10px 10px 0 0;
+                ul{
+                    div{
+                        border: none;
+                        overflow: visible;
+                        @include flex(center, center, 5px);
+                        margin-bottom: 20px;
+                        li{
+                            flex-wrap: wrap;
+                            width: 60px;
+                            height: 70px;
+                            border: none;
+                            background-color: var(--body-color);
+                            margin-top: -40px;
+                            border-radius: 15px 5px;
+                            box-shadow: 0 0 3px #ff7575 inset;
+                            svg{
+                                width: 30px;
+                                height: 20px;
+                            }
+                        }
+                    
+                    }
+                }
+            }
             .travel_route {
-                width: 90%;
+                width: 100%;
+                background-color: #f9f7ff;
+                border-radius: 0px;
                 // ---------- hero place 
                 .hero_place {
                     grid-template-columns: repeat(1, auto);
@@ -185,9 +225,41 @@
                             transform: translate(48.5%, -50%);
                         }
                     }
-            }
-        } 
-    }
+                }
+            } 
+        }
 
+    } 
+}
+
+@media screen and (max-width: 768px) {
+    .trend_search{
+        ul{
+            li{
+                p{
+                    font-size: 12px;
+                }
+                svg{
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero{
+        .hero_data{
+            .travel_route {
+                // ---------- hero place 
+                .hero_place {
+                    ul{
+                        .change_btn{
+                            transform: translate(46.5%, -50%);
+                        }
+                    }
+                }
+            } 
+        }
     } 
 }

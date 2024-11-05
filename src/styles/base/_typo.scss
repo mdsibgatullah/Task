@@ -1,6 +1,8 @@
 /* __________________ Google Font __________________ */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 
+// -------- nutito
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 /* __________________ BASE __________________ */
 *,ul {
@@ -16,11 +18,12 @@ html {
 }
 body {
     margin: 0;
-    font-family: var(--family-openSans);
     font-size: 16px;
     background-color: var(--body-color);
-    color: var(--text-color);
-    // background:  linear-gradient(64deg, #0c81ff, #d7eaff, #ffffff88);
+    color: var(--secondary-color);
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 a {
@@ -35,39 +38,24 @@ img {
     cursor: pointer;
 }
 h1,h2,h3,h4,h5,h6 {
-    color: var(--text-color);
+    color: var(--secondary-color);
     font-family: var(--family-primary);
     font-weight: var(--font-medium);
 }
-// h1{ font-size: 65px;}
-// h2{ font-size: 36px;}
-// h3{ font-size: 30px;}
-// h4{ font-size: 24px;}
-// h5{ font-size: 18px;}
-// h6{ font-size: 14px;}
-p{ font-size: 12px;}
-small{font-size: 8px;}
-// i {
-//     // @include icon(30px, 30px, 30px);
-//     font-size: 20px;
-//     border-radius: 50%;
-//     box-shadow: 0 0 3px var(--body-color-light);
-//     color: var(--primary-color);
-//     transition: .5s;
-//     cursor: pointer;
+h1{ font-size: 40px;}
+h2{ font-size: 18px;}
+h3{ font-size: 16px;}
+h4{ font-size: 15px;}
+h5{ font-size: 14px;}
+h6{ font-size: 13px;}
+p{ font-size: 14px;}
+small{font-size: 9px;}
 
-//     text-align: center;
-// }
-// i:hover {
-//     box-shadow: 0 0 4px var(--body-color-light);
-//     // background-color: gray;
-//     border-radius: 5px;
-// }
 /* __________________ Class CSS __________________ */
 .container {
     max-width: 1400px;
     width: 100%;
-    padding: 0px 15px;
+    padding: 0px 45px;
     margin: 0 auto;
 }
 input {
@@ -100,4 +88,21 @@ button{
     z-index: 1;
     display: none;
     background-color: #3333335b;
+}
+
+section{
+    padding: 50px 0;
+}
+section h1{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0px 20px;
+    }
+    section h1{
+        font-size: 24px;
+    }
 }
