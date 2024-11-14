@@ -5,7 +5,7 @@
 @import "./utilis/mixin";
 @import "./utilis/var";
 
-// -------- components 
+// -------- components
 @import "./components/header";
 @import "./components/hero";
 @import "./components/slider";
@@ -16,3 +16,11 @@
 @import "./components/ourapp";
 @import "./components/weaccept";
 @import "./components/footer";
+
+@import "./components/topair";
+
+
+// ------------- Page
+@import "./components/page/bus";
+@import "./components/page/flashblog";
+@import "./components/page/flashdtl";

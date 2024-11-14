@@ -1,16 +1,15 @@
-.frequently_content{
-    .item{
-        height: 250px;
-        .img{
-            img{
-                height: 250px;
-            }
-            h2{
-                position: absolute;
-                width: 100%;
-                top: 40px;
-                text-align: center;
-                color: var(--body-color);
+.frequently{
+    .swiper{
+        .swiper-slide{
+            .item{
+                .item_img{
+                    height: 235px;
+                    .item_over{
+                        top: 30px;
+                        bottom: auto;
+                        background-color: transparent;
+                    }
+                }
             }
         }
     }

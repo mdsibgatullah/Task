@@ -1,4 +1,6 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
+
 import hero1 from '../../assets/image/hero1.png'
 import { FaArrowRightLong } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
@@ -34,11 +36,31 @@ const Hero = () => {
                 <div className="hero_menu">
                     <ul>
                         <div>
-                            <li><IoBusOutline /><span>bus</span></li>
-                            <li><PiAirplaneTilt /><span>air</span></li>
-                            <li><PiTrain /><span>train</span></li>
-                            <li><LiaHotelSolid /><span>hotel</span></li>
-                            <li><PiTrain /><span>train</span></li>
+                            <li>
+                                <NavLink to="/Bus">
+                                    <IoBusOutline /><span>bus</span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/Bus">
+                                    <PiAirplaneTilt /><span>air</span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/Bus">
+                                    <PiTrain /><span>train</span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/Bus">
+                                    <LiaHotelSolid /><span>hotel</span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/Bus">
+                                    <PiTrain /><span>train</span>
+                                </NavLink>
+                            </li>
                         </div>
                     </ul>
                 </div>

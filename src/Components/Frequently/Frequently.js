@@ -1,39 +1,88 @@
 import React from 'react'
-import popular1 from '../../assets/image/popular_hotel1.jpg'
+
+
+import slide1 from '../../assets/image/Frequently2.png'
+import slide2 from '../../assets/image/Frequently1.jpeg'
+import slide3 from '../../assets/image/Frequently3.jpeg'
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// import required modules
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 
 function Frequently() {
-
   return (
-    <div>
-      <section className='flash_deals'>
-        <div className="container">
-            <h1>Frequently Traveled Bus Routes</h1>
-
-            {/* frequently_content --------  */}
-            <ul className='frequently_content flash_content'>
-                <li className='item'>
-                    <div className="img">
-                        <img src={ popular1 } alt="" />
+    <section className='frequently'>
+      <div className="container">
+        <h1>Frequently Traveled Bus Routes</h1>
+        <Swiper
+          spaceBetween={20}
+          loop={true}
+          pagination={{
+              clickable: true,
+          }}
+          autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+          }}
+          navigation={true}
+          modules={[Autoplay, Pagination, Navigation]}
+          className="mySwiper"
+          breakpoints={{
+            1080: {
+            slidesPerView: 3,
+            },
+            992: {
+            slidesPerView: 2,
+            },
+            768: {
+            slidesPerView: 2,
+            },
+            576: {
+            slidesPerView: 2,
+            }
+          }}
+          >
+          {/* ------------ Frequently */}
+          <SwiperSlide>
+            <div className="item">
+                <div className="item_img">
+                    <img src={slide1} alt="" />
+                    <div className="item_over">
                         <h2>Dhaka to Cox's Bazar</h2>
                     </div>
-                </li>
-                <li className='item'>
-                    <div className="img">
-                        <img src={ popular1 } alt="" />
+                </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="item">
+                <div className="item_img">
+                    <img src={slide2} alt="" />
+                    <div className="item_over">
                         <h2>Dhaka to Cox's Bazar</h2>
                     </div>
-                </li>
-                <li className='item'>
-                    <div className="img">
-                        <img src={ popular1 } alt="" />
+                </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="item">
+                <div className="item_img">
+                    <img src={slide3} alt="" />
+                    <div className="item_over">
                         <h2>Dhaka to Cox's Bazar</h2>
                     </div>
-                </li>
-            </ul>
-        </div>
-      </section>
-    </div>
+                </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+    </section>
   )
 }
 

@@ -1,87 +1,54 @@
-.flash_deals{
-    .flash_content{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        justify-items: center;
-        .item{
-            box-shadow: 0 0 6px 1px #a1a1a1;
-            border-radius: 10px;
-            overflow: hidden;
-            &:hover{
-                img{
-                    transform: scale(1.2);
-                    width: 100%;
-                }
-            }
-            .img{
-                position: relative;
-                height: 350px;
-                overflow: hidden;
-                img{
-                    transition: .5s;
-                }
-                .datetime{
-                    position: absolute;
-                    width: 100%;
-                    left: 0;
-                    bottom: 0;
-
-                    @include flexShort(10px);
-                    padding: 10px;
-                    li{
-                        background-color: #cdcdcd;
-                        text-align: center;
-                        padding: 5px 10px;
-                        border-radius: 5px;
-                        span{
-                            font-size: 13px;
-                        }
-                    }
-                }
-            }
-            .flash_text{
-                h3{
-                   padding: 15px 10px;
-                }
-            }
-            .book_now{
-                padding: 15px 10px;
-                @include flex(center, space-between, 10px);
-                .price{
-                    text-transform: uppercase;
-                    text-align: center;
-                    h2{
-                        padding-top: 15px;
-                        color: var(--primary-color);
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 992px) {
-    .flash_deals{
-        .flash_content{
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-    }
-}
-@media screen and (max-width: 768px) {
-    .flash_deals{
-        .flash_content{
-            grid-template-columns: repeat(1, 1fr);
+.flash_deal{
+    .swiper{
+        .swiper-slide{
             .item{
-                max-width: 380px;
-                .img{
-                    .datetime{
+                box-shadow: 0 0 5px #b0b0b0;
+                border-radius: 5px;
+                margin: 7px;
+                transition: var(--transition);
+                &:hover{
+                    box-shadow: 0 0 5px #4a4a4a;
+                }
+                .item_img{
+                    height: 355px;
+                    border-radius: 5px 5px 0 0;
+                    .item_over{
+                        top: auto;
+                        bottom: 10px;
+                        left: 10px;
+                        background-color: transparent;
+                    }
+                    ul{
+                        @include flex(center, start, 5px);
                         li{
-                            padding: 4px 5px;
-                            span{
-                                font-size: 12px;
-                            }
+                            background-color: #ffffffdd;
+                            text-align: center;
+                            padding: 5px 10px;
+                            border-radius: 5px;
+                            font-size: 12px;
+                        }
+                    }
+                }
+                .item_body{
+                    padding: 15px;
+                    h3{
+                        @include line(1);
+                    }
+                }
+                .item_footer{
+                    padding: 15px;
+                    @include flex(center, space-between, 10px);
+                    button{
+                        text-transform: uppercase;
+                    }
+                    div{
+                        text-transform: uppercase;
+                        text-align: center;
+                        del{
+                            font-size: 14px;
+                        }
+                        h3{
+                            color: var(--primary-color);
                         }
                     }
                 }
@@ -89,13 +56,28 @@
         }
     }
 }
-@media screen and (max-width: 375px) {
-    .flash_deals{
-        .flash_content{
-            .item{
-                max-width: 380px;
-                .img{
-                    height: 300px;
+
+@media screen and (max-width: 768px) {
+    .flash_deal{
+        .swiper{
+            .swiper-slide{
+                .item{
+                    .item_img{
+                        height: 280px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .flash_deal{
+        .swiper{
+            .swiper-slide{
+                .item{
+                    .item_img{
+                        height: 300px;
+                    }
                 }
             }
         }

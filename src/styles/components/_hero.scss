@@ -1,3 +1,4 @@
+// --------------- hero -
 .hero{
     background-color: #232323;
     padding-top: 80px;
@@ -5,11 +6,28 @@
         display: none;
     }
     .hero_data{
-        height: calc(100vh - 80px);
+        height: calc(100vh - 120px);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        // ------------ hero title 
+        .hero_title{
+            text-align: center;
+            margin-bottom: 40px;
+            h1,h3{
+                color: var(--body-color);
+                padding: 0;
+                text-shadow: 0 0 4px #5e5e5e;
+            }
+            h1{
+                font-weight: bold;
+            }
+            h3{
+                color: var(--body-color);
+            }
+        }
         .hero_menu{
             width: 500px;
             justify-content: space-between;
@@ -24,22 +42,20 @@
                     border-radius: 8px;
                     overflow: hidden;
                     li{
-                        @include icon;
-                        justify-content: center;
                         font-size: 12px;
                         border-left: 1px solid var(--border-color);
-                        padding: 10px 5px;
-                        &:hover{
-                            background-color: var(--primary-color);
-                            color: var(--body-color);
-                            transition: .7s;
-                        }
                         &:first-child{
                             border: none
                         }
-                        svg{
-                            width: 23px;
-                            height: 15px;
+                        a{
+                            @include icon;
+                            justify-content: center;
+                            padding: 10px 5px;
+                            &:hover{
+                                background-color: var(--primary-color);
+                                color: var(--body-color);
+                                transition: .7s;
+                            }
                         }
                     }
                 
@@ -100,7 +116,7 @@
                     li{
                         cursor: pointer;
                         border-left: 1px solid var(--border-color);
-                        padding: 5px 20px;
+                        padding: 5px 20px 10px;
                         &:first-child{
                             border: none;
                         }
@@ -114,10 +130,11 @@
                     }
                     .change_btn{
                         position: absolute;
-                        width: 100%;
+                        width: calc(100% - 25px);
+                        content: '';
                         top: 50%;
                         left: 0;
-                        transform: translate(46%, -50%);
+                        transform: translate(50%, -50%);
                         cursor: pointer;
                         svg{
                             width: 25px;
@@ -196,17 +213,19 @@
                         @include flex(center, center, 5px);
                         margin-bottom: 20px;
                         li{
-                            flex-wrap: wrap;
-                            width: 60px;
-                            height: 70px;
                             border: none;
-                            background-color: var(--body-color);
-                            margin-top: -40px;
-                            border-radius: 15px 5px;
-                            box-shadow: 0 0 3px #ff7575 inset;
                             svg{
                                 width: 30px;
                                 height: 20px;
+                            }
+                            a{ 
+                                flex-wrap: wrap;
+                                width: 60px;
+                                height: 70px;
+                                background-color: var(--body-color);
+                                margin-top: -40px;
+                                border-radius: 15px 5px;
+                                box-shadow: 0 0 3px #ff7575 inset;
                             }
                         }
                     
@@ -220,15 +239,9 @@
                 // ---------- hero place 
                 .hero_place {
                     grid-template-columns: repeat(1, auto);
-                    ul{
-                        .change_btn{
-                            transform: translate(48.5%, -50%);
-                        }
-                    }
                 }
-            } 
+            }
         }
-
     } 
 }
 
@@ -245,21 +258,4 @@
             }
         }
     }
-}
-
-@media screen and (max-width: 576px) {
-    .hero{
-        .hero_data{
-            .travel_route {
-                // ---------- hero place 
-                .hero_place {
-                    ul{
-                        .change_btn{
-                            transform: translate(46.5%, -50%);
-                        }
-                    }
-                }
-            } 
-        }
-    } 
 }

@@ -1,8 +1,6 @@
 import React from 'react'
 import slide1 from '../../assets/image/hero1.jpg'
 import slide2 from '../../assets/image/popular_hotel1.jpg'
-// import React, { useRef, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -11,7 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 // import required modules
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 function Slider() {
   return (
@@ -19,14 +17,17 @@ function Slider() {
         <div className="container">
             <h1>Trending Flight Destinations</h1>
             <Swiper
-              // slidesPerView={5}
               spaceBetween={15}
               loop={true}
               pagination={{
                 clickable: true,
               }}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
               navigation={true}
-              modules={[Pagination, Navigation]}
+              modules={[Autoplay, Pagination, Navigation]}
               className="mySwiper"
               breakpoints={{
                 1080: {
@@ -42,7 +43,6 @@ function Slider() {
                   slidesPerView: 2,
                 }
               }}
-
               >
                 <SwiperSlide>
                   <div className="swipe_item">
@@ -64,13 +64,7 @@ function Slider() {
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="swipe_item">
-                    <img src={slide2} alt="" />
-                    <h2>Banglasesh</h2>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="swipe_item">
-                    <img src={slide2} alt="" />
+                    <img src={slide1} alt="" />
                     <h2>Banglasesh</h2>
                   </div>
                 </SwiperSlide>

@@ -15,11 +15,6 @@
     --font-semi-bold: 600;
     --font-bold: 700;
 
-    /* ------------- Font Family --------------- */
-    --family-primary: 'Lexend', sans-serif;
-    --family-secondary: 'Barlow', sans-serif;
-    --family-openSans: 'Open Sans', sans-serif;
-
 
     /* ---------- Margin/padding ---------- */
     --mp-1: 5px;
@@ -30,8 +25,14 @@
     --mp-6: 40px;
 
     /* ---------- z-index ---------- */
+    --transition: .5s;
+
+
+    /* ---------- z-index ---------- */
     --z-1: 1;
     --z-2: 2;
     --z-3: 3;
     --z-fixed: 100;
+
+
 }

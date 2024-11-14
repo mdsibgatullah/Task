@@ -30,6 +30,13 @@
         @include svg;
     }
 }
+@mixin line($one){
+    display: -webkit-box;
+    -webkit-line-clamp: $one;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 // @mixin radius($px,$color){
 //     border-radius: $px;
 //     box-shadow: 0 0 4px $color;

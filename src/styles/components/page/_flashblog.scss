@@ -1,0 +1,107 @@
+// flash blog
+.flash_blog{
+    max-width: 950px;
+    margin: 0 auto;
+    h1{
+        padding-top: 40px;
+    }
+    ul{
+        @include flex(center, start, 40px);
+        flex-direction: column;
+        .item{
+            transition: .5s;
+            box-shadow: 0 0 10px #e8e8e8d5;
+            &:hover{
+                box-shadow: 0 0 10px gray;
+                border-radius: 5px;
+            }
+            a{
+                @include flex(center, start, 20px);
+                .item_img{
+                    width: 500px;
+                    height: 300px;
+                    overflow: hidden;
+                    img{
+                        height: 100%;
+                        border-radius: 5px 0 0 5px;
+                    }
+                }
+                .item_data{
+                    @include flex(start, space-around, 10px);
+                    flex-direction: column;
+                    padding: 10px;
+                    height: 250px;
+                    h2{
+                        font-size: 30px;
+                    }
+                    p{
+                        a{
+                            text-decoration: underline;
+                        }
+                    }
+                    ol{
+                        @include flex(center, start, 10px);
+                        li{
+                            a{
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 50%;
+                                text-align: center;
+                                padding: 10px;
+                                transition: var(--transition);
+                                &:hover{
+                                    box-shadow: 1px 1px 4px #323232;
+                                    svg{
+                                        transform: scale(1.1);
+                                    }
+                                }
+                                svg{
+                                    font-size: 20px;
+                                    color: var(--body-color);
+                                }
+                            }
+                            &:nth-child(odd) a {
+                                background-color: #3b5998;
+                            }
+                            &:nth-child(even) a {
+                                background-color: #00aced;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:992px) {
+    .flash_blog{
+        max-width: 500px;
+        ul{
+            .item{
+                a{
+                    flex-wrap: wrap;
+                    .item_img{
+                        width: 100%;
+                        img{
+                            border-radius: 5px 5px 0 0px;
+                        }
+                    }
+                    .item_data{
+                        justify-content: center;
+                        height: auto;
+                        h2{
+                            font-size: 24px;
+                        }
+                        b{
+                            font-weight: normal;
+                            span{
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

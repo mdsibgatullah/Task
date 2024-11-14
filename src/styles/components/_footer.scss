@@ -7,6 +7,9 @@ footer{
         justify-items: center;
         gap: 45px 0;
         ul{
+            .nav_logo{
+                width: 150px;
+            }
             li{
                 text-transform: capitalize;
                 font-size: 14px;

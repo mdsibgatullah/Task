@@ -1,0 +1,29 @@
+.top_air{
+    max-width: 1000px;
+    margin: 0 auto;
+    ul{
+        @include flex(center, center, 20px);
+        flex-wrap: wrap;
+        li{
+            text-align: center;
+            box-shadow: 0 0 5px #80808042;
+            transition: var(--transition);
+            border-radius: 5px;
+            padding: 5px;
+            overflow: hidden;
+            &:hover{
+                box-shadow: 0 0 5px gray;
+            }
+            .airline_img{
+                width: 150px;
+                margin-bottom: 5px;
+                img{
+                    height: 100%;
+                }
+            }
+            p{
+                text-transform: capitalize;
+            }
+        }
+    }
+}

@@ -1,63 +1,61 @@
-.swiper {
-  width: 100%;
-  height: 100%;
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .swipe_item{
-      height: 250px;
-      position: relative;
-      overflow: hidden;
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+.swiper{
+  .swiper-slide{
+    .item{
+      cursor: pointer;
+      &:hover{
+        img{
+          transform: scale(1.1);
+        }
+      }
+      .item_img{
+        position: relative;
+        height: 245px;
         border-radius: 5px;
-      }
-      h2{
-        position: absolute;
-        width: 100%;
-        bottom: 0px;
-        background-color: #ffffff57;
-        box-shadow: 0 0 4px #808080;
-        color: var(--body-color);
-        padding: 10px 0;
-        border-radius: 0 0 5px 5px;
+        overflow: hidden;
+        img{
+          height: 100%;
+          transition: var(--transition);
+        }
+        .item_over{
+          position: absolute;
+          width: 100%;
+          bottom: 20px;
+          padding: 7px 0;
+          background-color: #80808080;
+          text-transform: capitalize;
+          h2,h3{
+            text-align: center;
+            color: var(--body-color);
+          }
+        }
       }
     }
   }
-  .swiper-button-next, 
+  .swiper-button-next,
   .swiper-button-prev {
-    background-color: var(--body-color);
-    width: 35px;
-    height: 35px;
+    color: var(--primary-color);
+    background-color: white;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    text-align: center;
-    opacity: .5;
-    transition: .5s;
-    &:hover{
-      opacity: 1;
+    &::after{
+      font-size: 20px;
+      font-weight: bold;
     }
   }
-  .swiper-button-next:after, 
-  .swiper-button-prev:after{
-    font-size: 25px;
-    font-weight: bold;
-    padding: 3px;
-    color: var(--primary-color);
+}
+
+@media screen and (max-width: 576px) {
+    .swiper{
+      .swiper-slide{
+          padding: 0 40px;
+      }
+    }
   }
-}
-.swiper {
-  margin-left: auto;
-  margin-right: auto;
-}
-.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
-  display: none;
+@media screen and (max-width: 425px) {
+    .swiper{
+        .swiper-slide{
+            padding: 0 0;
+        }
+    }
 }
